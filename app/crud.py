@@ -30,3 +30,17 @@ def get_payees(db: Session, user_id: int, skip: int = 0, limit: int = 100):
 
 def get_payee(db: Session, payee_id: int):
     return db.query(models.Payee).filter(models.Payee.id == payee_id).first()
+
+def get_user_by_email(db: Session, email: str):
+    return db.query(models.User).filter(models.User.email == email).first()
+
+def create_user(db: Session, user: schemas.UserCreate):
+    existing_user = db.query(models.User).filter(models.User.email == user.email).first()
+    if existing_user:
+        raise Exception("User with this email already exists.")
+
+    db_user = models.User(**user.model_dump())
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
