@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyc
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Virtualenv
+payman-ai/
+
+# VSCode config
+.vscode/
+
+# PyCharm config
+.idea/
+
+# Mac OS metadata
+.DS_Store
+
+# PostgreSQL dumps / backups
+*.sql
+*.sqlite3
+*.db
+
+# Dotenv files (secrets)
+.env
+.env.*
+
+# Docker
+docker-compose.override.yml
+docker-compose-dev.yml
+
+# Pytest cache
+.pytest_cache/
+.cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# MyPy / type checking cache
+.mypy_cache/
+.dmypy.json
+
+# Logs
+*.log
+
+# System files
+*.swp
+*.swo
+
+# Pydantic V2 cache (u nekim slučajevima)
+__pydantic__/ 
+
+# Optional: If you use Jupyter for quick prototyping
+*.ipynb_checkpoints
