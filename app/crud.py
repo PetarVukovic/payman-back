@@ -19,7 +19,7 @@ def get_users(db: Session, skip: int = 0, limit: int = 100):
 # PAYEES CRUD
 
 def create_payee(db: Session, payee: schemas.PayeeCreate):
-    db_payee = models.Payee(**payee.dict())
+    db_payee = models.Payee(**payee.model_dump())
     db.add(db_payee)
     db.commit()
     db.refresh(db_payee)

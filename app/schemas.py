@@ -18,7 +18,7 @@ class User(UserBase):
     is_active: bool
     created_at: datetime
 
-    class Config:
+    class ConfigDict:
         from_attributes = True
 
 # PAYEES
@@ -38,5 +38,5 @@ class Payee(PayeeBase):
     user_id: int
     created_at: datetime
 
-    class Config:
+    class ConfigDict:
        from_attributes = True
